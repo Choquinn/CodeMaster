@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CodeMaster - Cursos Online</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container">
+      <a href="#" class="logo">CodeMaster</a>
+      <div class="nav-links">
+        <a href="#cursos">Cursos</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#contato">Contato</a>
+        <div class="auth-buttons">
+          <button id="registerBtn" class="btn btn-outline">Registrar</button>
+          <button id="loginBtn" class="btn btn-primary">Login</button>
+          <button id="logoutBtn" class="btn btn-danger" style="display: none;">
+            <i class="fas fa-sign-out-alt"></i> Sair
+          </button>
+        </div>
+      </div>
+      <button class="hamburger" id="mobileMenuBtn">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+
+  <div class="auth-modal" id="authModal" style="display: none;">
+    <div class="modal-content">
+      <span class="close-modal" id="closeModal">&times;</span>
+      
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="register">Registrar</button>
+        <button class="tab-btn" data-tab="login">Login</button>
+      </div>
+      
+      <div class="tab-content active" id="registerTab">
+        <h2>Crie sua conta</h2>
+        <form id="registerForm">
+          <div class="form-group">
+            <label for="registerName">Nome completo</label>
+            <input type="text" id="registerName" required>
+          </div>
+          <div class="form-group">
+            <label for="registerEmail">Email</label>
+            <input type="email" id="registerEmail" required>
+          </div>
+          <div class="form-group">
+            <label for="registerPassword">Senha</label>
+            <input type="password" id="registerPassword" required>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Criar conta</button>
+        </form>
+      </div>
+      
+      <div class="tab-content" id="loginTab">
+        <h2>Acesse sua conta</h2>
+        <form id="loginForm">
+          <div class="form-group">
+            <label for="loginEmail">Email</label>
+            <input type="email" id="loginEmail" required>
+          </div>
+          <div class="form-group">
+            <label for="loginPassword">Senha</label>
+            <input type="password" id="loginPassword" required>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Entrar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <header class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Aprenda programação do zero ao avançado</h1>
+        <p>Domine as tecnologias mais demandadas do mercado com nossos cursos práticos</p>
+        <a href="#cursos" class="btn btn-primary btn-lg">Explorar Cursos</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="courses" id="cursos">
+    <div class="container">
+      <h2 class="section-title">Nossos Cursos</h2>
+      <div class="course-filters">
+        <button class="filter-btn active" data-filter="all">Todos</button>
+        <button class="filter-btn" data-filter="frontend">Frontend</button>
+        <button class="filter-btn" data-filter="backend">Backend</button>
+        <button class="filter-btn" data-filter="fullstack">Fullstack</button>
+      </div>
+      
+      <div class="course-grid" id="coursesContainer">
+        <!-- Cursos serão carregados via JavaScript -->
+      </div>
+      
+      <div id="adminCourseForm" style="display: none;">
+        <h3>Adicionar Novo Curso</h3>
+        <form id="addCourseForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="courseTitle">Título</label>
+              <input type="text" id="courseTitle" required>
+            </div>
+            <div class="form-group">
+              <label for="courseCategory">Categoria</label>
+              <select id="courseCategory" required>
+                <option value="frontend">Frontend</option>
+                <option value="backend">Backend</option>
+                <option value="fullstack">Fullstack</option>
+                <option value="mobile">Mobile</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="courseDescription">Descrição</label>
+            <textarea id="courseDescription" rows="3" required></textarea>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="coursePrice">Preço (R$)</label>
+              <input type="number" id="coursePrice" min="0" step="0.01" required>
+            </div>
+            <div class="form-group">
+              <label for="courseImage">URL da Imagem</label>
+              <input type="text" id="courseImage" placeholder="https://...">
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary">Salvar Curso</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="container">
+      <div class="feature-card">
+        <i class="fas fa-laptop-code"></i>
+        <h3>Aprenda Praticando</h3>
+        <p>Projetos reais para colocar em prática o conhecimento adquirido</p>
+      </div>
+      <div class="feature-card">
+        <i class="fas fa-certificate"></i>
+        <h3>Certificado</h3>
+        <p>Certificado digital após conclusão de cada curso</p>
+      </div>
+      <div class="feature-card">
+        <i class="fas fa-user-tie"></i>
+        <h3>Instrutores</h3>
+        <p>Professores com experiência no mercado de trabalho</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>CodeMaster</h3>
+          <p>Transformando vidas através da educação em tecnologia</p>
+        </div>
+        <div class="footer-section">
+          <h3>Links</h3>
+          <ul>
+            <li><a href="#cursos">Cursos</a></li>
+            <li><a href="#sobre">Sobre nós</a></li>
+            <li><a href="#contato">Contato</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Contato</h3>
+          <p>contato@codemaster.com</p>
+          <p>(11) 99999-9999</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2023 CodeMaster. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
