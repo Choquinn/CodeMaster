@@ -1,12 +1,12 @@
-#Plataforma de Cursos Online
+# Plataforma de Cursos Online
 Sistema de cursos com autenticação de usuários e CRUD de cursos, desenvolvido por Choquinn como projeto de portfólio.
 
-#Tecnologias
+# Tecnologias
 Backend: Node.js, Express, MongoDB
 
 Frontend: HTML, CSS, JavaScript
 
-#Como usar
+# Como usar
 Instale `Node.js` e `MongoDB`
 
 Clone o repositório:
@@ -27,7 +27,7 @@ Execute:
 `npm run dev`
 Abra frontend/index.html no navegador.
 
-#Endpoints
+# Endpoints
 POST /api/auth/register - Registrar usuário
 
 POST /api/auth/login - Fazer login
